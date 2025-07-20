@@ -1,6 +1,6 @@
 # 📝 [편리한 습관 앱 (ez-habit)](https://ez-habit.vercel.app)
 
-<img width="466" height="782" alt="image" src="https://github.com/user-attachments/assets/540320b0-5087-47cd-b3f0-c083a5628567" />
+<img width="1566" height="697" alt="image" src="https://github.com/user-attachments/assets/e4b009b7-a2bd-41fa-ac4a-02f91215f315" />
 
 모바일 최적화된 심플하고 직관적인 습관 추적 애플리케이션입니다. 타이핑 없이 미리 정의된 습관들을 선택하여 빠르게 기록할 수 있습니다.
 
