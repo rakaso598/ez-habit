@@ -9,6 +9,7 @@ import HabitModal from "./components/HabitModal";
 import AddHabitButton from "./components/AddHabitButton";
 import Toast from "./components/Toast";
 import ConfirmModal from "./components/ConfirmModal";
+import InstallPrompt from "./components/InstallPrompt";
 
 export default function Home() {
   const [habits, setHabits] = useState<Habit[]>([]);
@@ -222,6 +223,9 @@ export default function Home() {
         onCancel={() => setConfirmModal((prev) => ({ ...prev, isOpen: false }))}
         type={confirmModal.type}
       />
+
+      {/* PWA 설치 프롬프트 */}
+      <InstallPrompt />
     </div>
   );
 }
