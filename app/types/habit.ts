@@ -35,8 +35,7 @@ export type HabitType =
   | "수영하기"
   | "등산하기"
   | "캠핑하기"
-  | "낚시하기"
-  | "독서하기";
+  | "낚시하기";
 
 export const HABIT_TYPES: HabitType[] = [
   "물마시기",

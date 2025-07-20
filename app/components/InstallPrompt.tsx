@@ -11,8 +11,16 @@ export default function InstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
   const [showInstallPrompt, setShowInstallPrompt] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
+    // 개발 모드에서 닫기 상태 확인
+    if (process.env.NODE_ENV === "development") {
+      const dismissed =
+        localStorage.getItem("pwa-install-dismissed") === "true";
+      setIsDismissed(dismissed);
+    }
+
     const handler = (e: Event) => {
       // 기본 설치 프롬프트 방지
       e.preventDefault();
@@ -50,9 +58,18 @@ export default function InstallPrompt() {
 
   const handleDismiss = () => {
     setShowInstallPrompt(false);
+    setIsDismissed(true);
+    // 개발 모드에서도 닫기 상태 저장
+    if (process.env.NODE_ENV === "development") {
+      localStorage.setItem("pwa-install-dismissed", "true");
+    }
   };
 
-  if (!showInstallPrompt) return null;
+  // 개발 중에는 항상 표시 (테스트용)
+  const shouldShow =
+    (showInstallPrompt || process.env.NODE_ENV === "development") &&
+    !isDismissed;
+  if (!shouldShow) return null;
 
   return (
     <div className="fixed bottom-20 left-4 right-4 z-40">

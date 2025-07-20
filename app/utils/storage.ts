@@ -96,7 +96,7 @@ export const importFromCSV = (file: File): Promise<Habit[]> => {
         }
 
         resolve(habits);
-      } catch (error) {
+      } catch {
         reject(new Error("CSV 파일을 읽는 중 오류가 발생했습니다."));
       }
     };

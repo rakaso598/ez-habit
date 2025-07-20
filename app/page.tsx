@@ -10,6 +10,8 @@ import AddHabitButton from "./components/AddHabitButton";
 import Toast from "./components/Toast";
 import ConfirmModal from "./components/ConfirmModal";
 import InstallPrompt from "./components/InstallPrompt";
+import PWAStatus from "./components/PWAStatus";
+import IOSInstallPrompt from "./components/iOSInstallPrompt";
 
 export default function Home() {
   const [habits, setHabits] = useState<Habit[]>([]);
@@ -53,6 +55,7 @@ export default function Home() {
     };
 
     setHabits((prev) => [...prev, newHabit]);
+    handleShowToast(`${habitType} 습관이 추가되었습니다!`);
   };
 
   const handleToggleHabit = (id: string) => {
@@ -99,6 +102,7 @@ export default function Home() {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    handleShowToast("습관 선택이 완료되었습니다!");
   };
 
   const handleShowToast = (message: string) => {
@@ -226,6 +230,12 @@ export default function Home() {
 
       {/* PWA 설치 프롬프트 */}
       <InstallPrompt />
+
+      {/* iOS 전용 설치 프롬프트 */}
+      <IOSInstallPrompt />
+
+      {/* PWA 상태 확인 (개발용) */}
+      <PWAStatus />
     </div>
   );
 }

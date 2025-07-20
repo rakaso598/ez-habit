@@ -92,11 +92,32 @@ npm run dev
 
 브라우저에서 `http://localhost:3000` (또는 사용 가능한 포트)로 접속하세요.
 
-### 빌드
+### 빌드 및 배포
 
 ```bash
+# 타입 체크
+npm run type-check
+
+# 린트 검사
+npm run lint
+
+# 프로덕션 빌드
 npm run build
+
+# 프로덕션 서버 실행
 npm start
+
+# 미리보기
+npm run preview
+```
+
+### PWA 아이콘 설정
+
+PWA가 완전히 작동하려면 아이콘 파일이 필요합니다:
+
+```bash
+# PWA_ICONS.md 파일 참조
+# public/icon-192x192.png 및 public/icon-512x512.png 생성
 ```
 
 ## 📁 프로젝트 구조
