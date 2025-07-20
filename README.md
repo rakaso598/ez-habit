@@ -1,4 +1,4 @@
-# 📝 [편리한 습관 앱 (SimpleHobby)](https://ez-habit.vercel.app)
+# 📝 [편리한 습관 앱 (ez-habit)](https://ez-habit.vercel.app)
 
 <img width="466" height="782" alt="image" src="https://github.com/user-attachments/assets/540320b0-5087-47cd-b3f0-c083a5628567" />
 
